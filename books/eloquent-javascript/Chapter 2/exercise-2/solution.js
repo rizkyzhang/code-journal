@@ -41,6 +41,8 @@ function fizzbuzz2() {
     }
 
     output.length > 0 ? console.log(output) : console.log(i);
+    // output !== "" ? console.log(output) : console.log(i);
+    // console.log(output || i);
   }
 }
 
