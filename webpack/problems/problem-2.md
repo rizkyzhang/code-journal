@@ -1,4 +1,4 @@
-# React onClick not working in any of my browsers
+Problem: React onClick not working in any of my browsers
 
 Causes: HtmlWebpackPlugin, HtmlWebpack Plugin is adding additional script tags of bundle in head tag of index.html. So if you already define a script tag in index.html, HtmlWebpackPlugin will replace it with bundled script tags when webpack runs.
 
