@@ -26,6 +26,8 @@ console.log("Second");
 console.log("Third");
 ```
 
+#### **Asynchronous**
+
 ```js
 console.log("First");
 
