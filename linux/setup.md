@@ -59,11 +59,9 @@ lon=108.999298
 
 ## Setup VS Codium
 
-1. `wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/ keyrings/vscodium-archive-keyring.gpg`
-2. `echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list`
-3. `sudo apt update && sudo apt install codium`
-4. Install settings sync, login Github, choose vscode gist
-5. Command pallete -> Sync: Download Settings
+1. Install VS code
+2. Install settings sync, login Github, choose VS Code gist
+3. Command pallete -> Sync: Download Settings
 
 ## Decrease swappiness value to 20
 
