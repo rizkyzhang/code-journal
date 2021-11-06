@@ -1,0 +1,4 @@
+- Stack = width auto (depends on the content) and equal spacing, also can't add margin individually to stack items, have to use spacing property from the parent. Stack primary use case is to lay items out and control the spacing between each item. If you have a more complicated use case, such as changing the margin on the last child, you can combine Stack and Flex and use justify-content: space-between for more control of the layout.
+- Flex with spacer = full width of container and equal spacing, spacer can be used to push away contents to the border of the container, great for navbar.
+- SimpleGrid = simple version of grid & can easily activate auto-responsive grid.
+- Center = great for centering contents without using Flex.
