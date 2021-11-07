@@ -1,6 +1,6 @@
-Error: `querySrv ESERVFAIL _mongodb._tcp.cluster0.abcd0.mongodb.net`
+Problem: `querySrv ESERVFAIL _mongodb._tcp.cluster0.abcd0.mongodb.net`
 
-Cause: `querySrv ESERVFAIL` is a DNS error. This means that your local machine is not able to get a response from your DNS resolver for the SRV record `_mongodb._tcp.cluster0.abcd0.mongodb.net`.
+Causes: `querySrv ESERVFAIL` is a DNS error. This means that your local machine is not able to get a response from your DNS resolver for the SRV record `_mongodb._tcp.cluster0.abcd0.mongodb.net`.
 
 From your local machine, test SRV lookup from a command line, possibly one of these:
 
