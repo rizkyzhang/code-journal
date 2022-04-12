@@ -33,4 +33,4 @@ higherOrderFunction(20, add);
 
 ## Async/await
 
-- If the async function returns a value, that value will also get wrapped in a promise. That means you’ll have to use `.then` to access it.
+- If the async function returns a value, that value will also get wrapped in a promise. That means you’ll have to use `.then` or `await` to access it.
