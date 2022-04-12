@@ -1,4 +1,6 @@
-Problem: The certificate for deb.nodesource expired.
+## Problem
+
+The certificate for deb.nodesource expired.
 
 ```
 ## Confirming "bionic" is supported...
@@ -32,6 +34,10 @@ Error executing command, exiting
 The command '/bin/bash -o pipefail -c curl -fsSL https://deb.nodesource.com/setup_14.x | bash - &&   apt-get install -y --no-install-recommends nodejs &&   npm i -g xunit-viewer &&   rm -rf /var/lib/apt/lists/*' returned a non-zero code: 1
 ```
 
-Solution: `sudo apt install ca-certificates`
+## Solution
 
-Reference: https://github.com/nodesource/distributions/issues/1266
+`sudo apt install ca-certificates`
+
+## Reference
+
+https://github.com/nodesource/distributions/issues/1266
