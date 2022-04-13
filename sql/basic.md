@@ -1,0 +1,2 @@
+- Database = a place where we store data
+- Real life examples of database = phone book, excel sheet and todo list.
