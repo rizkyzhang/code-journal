@@ -1,6 +1,8 @@
-## Problem: `Property 'user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'` error when doing this: `req.user = user`.
+## Problem
 
-## Solution steps:
+`Property 'user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'` when doing this: `req.user = user`.
+
+## Solution steps
 
 1. Create a types folder in your src directory
 
@@ -39,8 +41,10 @@ declare global {
 }
 ```
 
-## Important note:
+## Important note
 
 In the tsconfig.json's typeRoots attribute cares about ordering. Make sure you specify your local types before the node_modules types! Use `["./types", "node_modules/@types"]` over `["node_modules/@types", "./types"]`
 
-Reference: https://stackoverflow.com/questions/65848442/property-user-does-not-exist-on-type-requestparamsdictionary-any-any-pars
+## Reference
+
+https://stackoverflow.com/questions/65848442/property-user-does-not-exist-on-type-requestparamsdictionary-any-any-pars

@@ -1,4 +1,4 @@
-## Problem:
+## Problem
 
 ```ts
 type User =
@@ -20,7 +20,7 @@ if (user.name) {
 
 When trying to access name property from user object, TypeScript throw an error: `Property 'name' does not exist on type '{}'`.
 
-## Solution:
+## Solution
 
 Using in operator https://www.typescriptlang.org/docs/handbook/advanced-types.html#using-the-in-operator
 
@@ -41,4 +41,6 @@ if ("name" in user) {
 }
 ```
 
-Reference: https://stackoverflow.com/questions/52708347/typescript-discriminated-union-with-empty-object
+## Reference
+
+https://stackoverflow.com/questions/52708347/typescript-discriminated-union-with-empty-object
