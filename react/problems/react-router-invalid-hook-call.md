@@ -1,4 +1,4 @@
-Problem:
+## Problem
 
 ```
 Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -8,18 +8,24 @@ Error: Invalid hook call. Hooks can only be called inside of the body of a funct
 See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
 ```
 
-Causes: Accidently passing component as function to `Route`
+## Causes
 
-```html
-<Route exact path="*">{Home}</Route>
+Incorrect syntax when passing component to `Route`
+
+```jsx
+<Route exact path="*">
+  {Home}
+</Route>
 ```
 
-Solution:
+## Solution
 
-```html
-<Route exact path="*"><Home /></Route>
+```jsx
+<Route exact path="*">
+  <Home />
+</Route>
 ```
 
-```
+```jsx
 <Route exact path="*" component={Home}></Route>
 ```
