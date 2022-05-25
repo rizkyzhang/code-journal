@@ -11,6 +11,17 @@
 - useState when managing only one state.
 - useReducer when managing multiple state that depends on each other to reduce human error (accidently set wrong state).
 
+## useState vs useRef vs normal variable
+
+- useState is immutable, useRef is mutable via `current` property.
+- useState cause re-render when state changes, useRef doesn't cause re-render when state changes.
+- Both useState and useReef keep value between re-render, normal variable doesn't.
+
+## useRef usecases
+
+- Keep value without causing re-rerender (UI doesn't need to be updated)
+- Access DOM of a an element/component.
+
 ## useEffect
 
 - If the depedency list (second argument) of useEffect is not specified, it will run after every re-render.
