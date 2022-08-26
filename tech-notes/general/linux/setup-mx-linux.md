@@ -12,7 +12,7 @@
 ## General setup
 
 1. `sudo apt update && sudo apt upgrade`
-2. `sudo apt install zsh`
+2. `sudo apt install zsh bat exa`
 3. `chsh -s zsh`
 4. Install zgenom https://github.com/jandamm/zgenom
 5. Copy linux dotfiles to root https://github.com/rizkyzhang/dotfiles
@@ -26,6 +26,9 @@
 13. Install docker https://docs.docker.com/engine/install/debian/
 14. `sudo usermod -aG docker $USER`
 15. `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+16. Download firacode nerd font https://www.nerdfonts.com/font-downloads
+17. Unzip and copy to ~/.fonts
+18. `fc-cache -fv` to manually rebuild the font cache
 
 ## Postman setup
 
