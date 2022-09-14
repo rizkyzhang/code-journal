@@ -31,5 +31,3 @@
 
 - Middleware is a function that were called between processing the request and sending the response in an application.
 - Middleware is usually used for authentication, error checking and parsing request body.
-- `express.urlencoded({ extended: true})` parse both JSON and HTML form data.
-- `express.urlencoded({ extended: false})` only parse HTML form data.
