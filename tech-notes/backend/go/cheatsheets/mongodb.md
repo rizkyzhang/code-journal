@@ -74,6 +74,13 @@ if err != nil {
 	fmt.Printf("Find error: %s", err)
 	return
 }
+defer func() {
+	err := cur.Close(ctx)
+	if err != nil {
+		fmt.Printf("cur.Close error: %+v", err)
+		return
+	}
+}()
 
 // err = cur.All(ctx, &todos)
 // if err != nil {
