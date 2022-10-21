@@ -2,7 +2,7 @@
 
 Golang migrate error `dirty database version` when some error encountered when migrate up or down, even if the problem is already fixed, migration still not working.
 
-## Cause
+## Causes
 
 For example your migrations directory look like this:
 
