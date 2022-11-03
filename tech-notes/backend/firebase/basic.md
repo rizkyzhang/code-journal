@@ -14,7 +14,7 @@ Firebase Authentication tokens expire an hours after they are created. Firebase 
 
 Reference: https://stackoverflow.com/a/62390404
 
-## Firabase link multiple providers to one account
+## Firebase link multiple providers to one account
 
 In some situations, Firebase will automatically link accounts when a user signs in with different providers using the same email address. This can only happen when specific criteria are met, however. To understand why, consider the following situation: a user signs in using Google with a @gmail.com account and a malicious actor creates an account using the same @gmail.com address, but signing in via Facebook. If these two accounts were automatically linked, the malicious actor would gain access to the user's account.
 
