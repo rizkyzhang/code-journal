@@ -1,0 +1,9 @@
+- Auto-delete and exclusive queues should be server-named (uniquely generated name by rabbitmq by passing empty string as name when declaring queue)
+- Exclusive consumer make sure only one consumer at a time consumes from the queue.
+- Exclusive/auto-delete will delete the queue immediately after the first consumer has disconnected, while expires will delete the queue after a period of inactivity regardless of consumer(s) having connected to it in the past
+- It would be better to use expires instead of auto-delete because if sometHing happens and the subscriber went down for a short time then the msg will not be lost that's a big advantage of using expires and that explains simply the difference between the two
+- Since all messages in Quorum Queues are persistent, the AMQP “delivery-mode” option has no effect on their operation
+- The type of exchange does not affect how messages are delivered to queue consumers. If multiple consumers are subscribed to the same queue, each message will only be delivered to one of the consumers
+- Quorum queue must be durable, non-exclusive and non-auto-delete
+- Queue argument `x-delivery-limit: 3` limit message delivery retry
+- Queue argument `x-single-active-consumer: true`, quorum provides new feature Single Active Consumer which enables you to attach multiple consumers to a queue, while only one of the consumers is active. This lets you create highly available consumers while ensuring that at any moment in time, only one of them receives messages, which until now was not possible to attain with RabbitMQ. Another consumer can consume messages only when the active one is abnormal.Reference: https://support.huaweicloud.com/intl/en-us/usermanual-rabbitmq/rabbitmq_ug_0015.html
