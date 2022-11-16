@@ -63,3 +63,18 @@ GOOS=linux GOARCH=amd64 go build -o bin/app-amd64-linux app.go
 # 32-bit
 GOOS=linux GOARCH=386 go build -o bin/app-386-linux app.go
 ```
+
+## JSON Decode
+
+- Decode body into struct `json.NewDecoder(res.Body).Decode()`
+
+## OK check
+
+- Type casting operation will return the casted value and ok status (true if casting successful, vice versa) `metadataStr, ok := metadata.(string)`
+- Accessing map property's value will return the value and ok status (true if property exist, vice versa) `metadata, ok := data["metadata"]`
+
+## Print struct
+
+- `%v` – It will print only values. Field name will not be printed. This is the default way of printing a struct. `fmt.Printf("%v", user)` - `{Sam 31 2000}`
+- `%+v` – It will print both field and value. `fmt.Printf("%+v", emp)` - `{name:Sam age:31 salary:2000}`
+- `%#v` – It will print the struct name, also both field and value. `main.employee` - `{name:"Sam", age:31, salary:2000}`
