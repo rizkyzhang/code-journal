@@ -1,0 +1,3 @@
+- Convert data to Buffer `Buffer.from(JSON.stringify(objOrArray))`
+- Convert json buffer to json object `JSON.parse`
+- Decode escaped HTML into raw HTML `decodeURIComponent("\u003ch1\u003etEST\u003c/h1\u003e")`
