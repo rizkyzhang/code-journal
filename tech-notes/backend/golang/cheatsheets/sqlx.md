@@ -78,6 +78,25 @@ err = db.GetContext(ctx, &products, "SELECT * FROM products LIMIT 1")
 	}
 ```
 
+### Query row get last inserted row id
+
+```go
+query, args, err := db.BindNamed(`
+	INSERT INTO products (uid, name, slug, sku, description, images, created_at, updated_at)
+	VALUES (:uid, :name, :slug, :sku, :description, :images, :created_at, :updated_at)
+	RETURNING id;
+	`, productPayload)
+if err != nil {
+	return err
+}
+
+var productID int64
+err = db.GetContext(ctx, &productID, query, args...)
+if err != nil {
+	return err
+}
+```
+
 ### Query rows without iterating `rows.Next` and auto scan result into struct or map
 
 ```go
