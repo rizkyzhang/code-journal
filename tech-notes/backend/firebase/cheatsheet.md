@@ -1,0 +1,1 @@
+- Check if logged user is new (via signup) with `getAdditionalUserInfo().isNewUser`.https://stackoverflow.com/questions/68888158/firebase-check-if-user-created-with-google-account-is-signing-up-or-logging-in
