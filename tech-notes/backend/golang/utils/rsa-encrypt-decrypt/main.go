@@ -1,9 +1,10 @@
+// WARNING: use of rsa.EncryptPKCS1v15 function to encrypt plaintexts other than session keys is dangerous. Use RSA OAEP in new protocols.
+
 package main
 
 import (
 	"crypto/rand"
 	"crypto/rsa"
-	"crypto/sha256"
 	"crypto/x509"
 	"encoding/base64"
 	"encoding/pem"
@@ -38,7 +39,7 @@ func (b *baseRsaUtil) Encrypt(plaintext string) (string, error) {
 	}
 	pub := pubInterface.(*rsa.PublicKey)
 
-	encrypted, err := rsa.EncryptOAEP(sha256.New(), rand.Reader, pub, []byte(plaintext), nil)
+	encrypted, err := rsa.EncryptPKCS1v15(rand.Reader, pub, []byte(plaintext))
 	if err != nil {
 		return "", err
 	}
@@ -63,7 +64,7 @@ func (b *baseRsaUtil) Decrypt(encrypted string) (string, error) {
 		return "", err
 	}
 
-	plaintext, err := rsa.DecryptOAEP(sha256.New(), rand.Reader, priv, ciphertext, nil)
+	plaintext, err := rsa.DecryptPKCS1v15(rand.Reader, priv, ciphertext)
 	if err != nil {
 		return "", err
 	}
@@ -75,13 +76,26 @@ func main() {
 	publicKey, err := os.ReadFile("public.pem")
 	if err != nil {
 		fmt.Println(err)
+		return
 	}
-
 	privateKey, err := os.ReadFile("private.pem")
 	if err != nil {
 		fmt.Println(err)
+		return
+	}
+	rsaUtil := NewRSAUtil(publicKey, privateKey)
+
+	encrypted, err := rsaUtil.Encrypt("test")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	decrypted, err := rsaUtil.Decrypt(encrypted)
+	if err != nil {
+		fmt.Println(err)
+		return
 	}
 
-	rsaUtil := NewRSAUtil(publicKey, privateKey)
-	fmt.Println(rsaUtil)
+	fmt.Println(encrypted)
+	fmt.Println(decrypted)
 }
