@@ -1,0 +1,38 @@
+{
+  "folders": [
+    {
+      "path": "./aes-encrypt-decrypt"
+    },
+    {
+      "path": "./bool-addr"
+    },
+    {
+      "path": "./download-file"
+    },
+    {
+      "path": "./gomail"
+    },
+    {
+      "path": "./jwtutil"
+    },
+    {
+      "path": "./list-printer-devices"
+    },
+    {
+      "path": "./printer-ipp"
+    },
+    {
+      "path": "./random-bytes"
+    },
+    {
+      "path": "./random-string"
+    },
+    {
+      "path": "./rsa-encrypt-decrypt"
+    },
+    {
+      "path": "./rupiah"
+    }
+  ],
+  "settings": {}
+}
