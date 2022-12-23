@@ -123,3 +123,37 @@ if err != nil {
 	return
 }
 ```
+
+## Scan into nested field
+
+The easiest way is to embed the objects, but I do it in a temporary object instead of making the original messier.
+
+You then add a function to convert your temp (flat) object into your real (nested) one.
+
+```go
+type Customer struct {
+  Id      int     `json:"id" db:"id"`
+	Name    string  `json:"name" db:"name"`
+	Address Address `json:"address"`
+}
+
+type Address struct {
+  Street string `json:"street" db:"street"`
+  City   string `json:"city" db:"city"`
+}
+
+type tempCustomer struct {
+  Customer
+  Address
+}
+
+func (c *tempCustomer) ToCustomer() Customer {
+  customer := c.Customer
+  customer.Address = c.Address
+  return customer
+}
+```
+
+Now you can scan into tempCustomer and simply call tempCustomer.ToCustomer before you return. This keeps your JSON clean and doesn't require a custom scan function.
+
+Reference: https://stackoverflow.com/a/72322421

@@ -13,6 +13,8 @@
 - `int`, same as int32 ot int64 (depending on the value)
 - `rune`, same as int32
 
+---
+
 ## Zero values
 
 - 0 for all integer types,
@@ -31,6 +33,8 @@ type T struct {
 }
 fmt.Println([2]T{}) // [{0 0 <nil>} {0 0 <nil>}]
 ```
+
+---
 
 ## Build
 
@@ -64,14 +68,20 @@ GOOS=linux GOARCH=amd64 go build -o bin/app-amd64-linux app.go
 GOOS=linux GOARCH=386 go build -o bin/app-386-linux app.go
 ```
 
+---
+
 ## JSON Decode
 
 - Decode body into struct `json.NewDecoder(res.Body).Decode()`
+
+---
 
 ## OK check
 
 - Type casting operation will return the casted value and ok status (true if casting successful, vice versa) `metadataStr, ok := metadata.(string)`
 - Accessing map property's value will return the value and ok status (true if property exist, vice versa) `metadata, ok := data["metadata"]`
+
+---
 
 ## Print struct
 
