@@ -34,8 +34,8 @@ Once you force the version and your migration was fixed, your database is 'clean
 The version shown in the error will be always the version you are going to migrate to,
 but **it is not the version you are going to force**, **instead it is the current version**.
 
-For example you try to migrate up to version `20221009130110`, then you should force version `20221009124227`, run `migrate -path PATH_TO_YOUR_MIGRATIONS -database YOUR_DATABASE_URL 20221009124227`.
-If you try to migrate down to version `20221009124227`, then you should force version `20221009130110`, run `migrate -path PATH_TO_YOUR_MIGRATIONS -database YOUR_DATABASE_URL 20221009130110`.
+For example you try to migrate up to version `20221009130110`, then you should force version `20221009124227`, run `migrate -path PATH_TO_YOUR_MIGRATIONS -database YOUR_DATABASE_URL force 20221009124227`.
+If you try to migrate down to version `20221009124227`, then you should force version `20221009130110`, run `migrate -path PATH_TO_YOUR_MIGRATIONS -database YOUR_DATABASE_URL force 20221009130110`.
 
 After version forcing is done, you can run migrate up and down again.
 
