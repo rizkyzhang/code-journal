@@ -93,3 +93,22 @@ Persistent messages are removed from a durable queue once they are consumed (and
 - Send message as persistent message (delivery mode 2)
 - Publish into durable exchange
 - Message to be stored in durable queue
+
+### Handling RPC error
+
+Reference: https://stackoverflow.com/questions/54827423/handling-exception-in-rabbitmq-rpc-model-php
+
+If this is an application-level error which the publisher can and should handle, then I think this should be encapsulated at the RPC layer, rather than the transport layer. That is, it should be part of the data you send, not a status of any sort within RabbitMQ.
+
+What I mean by that is that if the response from the consumer currently looks like this:
+
+`{"answer": 42, "years": 7500000}`
+You might change it to indicate success:
+
+`{"success": true, "result": {"answer": 42, "years": 7500000}}`
+Then you can return a message indicating failure instead:
+
+`{"success": false, "error": "Unable to reticulate splines"}`
+It's then up to the code in the publisher to "unwrap" this error and handle it appropriately.
+
+This makes the whole mechanism agnostic of how the RPC works - you could replace RabbitMQ with ZeroMQ, or an HTTP API, etc, and use the same response format to handle the errors.
