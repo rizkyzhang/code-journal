@@ -157,3 +157,14 @@ func (c *tempCustomer) ToCustomer() Customer {
 Now you can scan into tempCustomer and simply call tempCustomer.ToCustomer before you return. This keeps your JSON clean and doesn't require a custom scan function.
 
 Reference: https://stackoverflow.com/a/72322421
+
+## In query
+
+```go
+var carts []model.Cart
+
+query, args, _ := sqlx.In("SELECT * FROM carts WHERE id IN (?)", IDS)
+query = b.db.Rebind(query)
+
+_ = b.db.SelectContext(ctx, &carts, query, args...)
+```
