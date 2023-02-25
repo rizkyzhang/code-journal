@@ -1,0 +1,5 @@
+- Open MX Linux Tools
+- Open Boot Options
+- Edit kernel parameters from `quiet splash` to `quiet splash init=lib/systemd/systemd`
+- Click apply
+- Reboot
