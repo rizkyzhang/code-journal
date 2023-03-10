@@ -21,6 +21,7 @@
 - 0.0 for floating point numbers,
 - false for booleans,
 - "" for strings,
+- time.Time{} for time,
 - nil for interfaces, slices, channels, maps, pointers and functions.
 
 The elements of an array or struct will have its fields zeroed if no value is specified. This initialization is done recursively:
