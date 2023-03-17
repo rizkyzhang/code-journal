@@ -10,9 +10,9 @@
 ## VS Code as default editor & diff tool
 
 ```bash
-> git config --global core.editor "codium --wait"
+> git config --global core.editor "code --wait"
 > git config --global diff.tool "default-difftool"
-> git config --global difftool.default-difftool.cmd "codium --wait --diff \$LOCAL \$REMOTE"
+> git config --global difftool.default-difftool.cmd "code --wait --diff \$LOCAL \$REMOTE"
 ```
 
 ## Show git config
