@@ -33,6 +33,7 @@
 
 ## Remote
 
+- Add remote origin repository url `git remote add origin <url>`
 - Create a remote branch with the same name as the local branch and push changes to the remote branch, used for initial push on empty remote repository `git push -u origin <branch-name>`
 - Fetch changes from a remote branch but will not perform a merge on your local branch `git fetch origin <branch-name>`
 - Fetch + merge `git pull origin <branch-name>`
