@@ -1,0 +1,11 @@
+- `sudo apt install scrcpy adb`
+- Activate developer mode
+- Activate usb debugging mode, also enable `USB DEBUGGING (Security settings)` for MiUI to be able to control screen from pc
+- Get phone's ip address
+- Plug in phone to the pc
+- `adb devices`
+- `adb tcpip 5555`
+- `adb connect IP_ADDRESS:5555`
+- `adb devices`
+- Unplug phone
+- `scrcpy`
