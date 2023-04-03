@@ -1,0 +1,3 @@
+- Disable production source mapping to prevent exposing source code in developer tools by setting `productionBrowserSourceMaps: false` in `next.config.js`
+- If you want get async data into the context provider, go to `_app.tsx` and put the async logic there, after you got the data, pass it to the context provider as props
+- Never use `NEXT_PUBLIC_` env to store sensitive information because the engine will hardcode it into the code, instead use next api route to read the env
