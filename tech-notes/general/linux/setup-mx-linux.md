@@ -12,7 +12,7 @@
 ## General setup
 
 1. `sudo apt update && sudo apt upgrade`
-2. `sudo apt install openssh-server adb scrcpy ncdu zsh bat exa build-essential clang python3-pip`
+2. `sudo apt install openssh-server adb scrcpy ncdu zsh bat exa build-essential clang python3-pip kdenlive wireshark`
 3. `chsh -s /usr/bin/zsh`
 4. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 5. Install neovim with deb https://github.com/neovim/neovim/releases/
@@ -31,6 +31,7 @@
 18. Download firacode nerd font https://www.nerdfonts.com/font-downloads
 19. Unzip and copy to ~/.fonts
 20. `fc-cache -fv` to manually rebuild the font cache
+21. `sudo usermod -a -G wireshark coderz`
 
 ## Postman setup
 
