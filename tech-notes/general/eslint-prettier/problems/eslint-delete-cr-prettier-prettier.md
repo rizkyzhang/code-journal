@@ -16,3 +16,5 @@ Add this into `.eslintrc` rules
 ```
 
 ## Reference
+
+https://stackoverflow.com/questions/53516594/why-do-i-keep-getting-eslint-delete-cr-prettier-prettier
