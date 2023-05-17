@@ -14,6 +14,22 @@ defer func() {
 }()
 ```
 
+### Convert from sql to sqlx
+
+```go
+var mySqlDb *sql.DB
+
+mySqlxDb := sqlx.NewDb(mySqlDb, "pgx") // returns *sqlx.DB
+```
+
+### Convert to sql
+
+```go
+var mySqlxDb *sqlx.DB
+
+var mySqlDb := mySqlxDb.DB
+```
+
 ## Query
 
 ### Query row with extension to scan result into struct or map
