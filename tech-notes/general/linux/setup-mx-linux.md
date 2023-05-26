@@ -12,7 +12,7 @@
 ## General setup
 
 1. `sudo apt update && sudo apt upgrade`
-2. `sudo apt install openssh-server adb scrcpy ncdu zsh bat exa build-essential clang python3-pip kdenlive wireshark`
+2. `sudo apt install openssh-server adb scrcpy ncdu zsh build-essential clang python3-pip kdenlive wireshark`
 3. `chsh -s /usr/bin/zsh`
 4. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 5. Install neovim with deb https://github.com/neovim/neovim/releases/
@@ -32,6 +32,21 @@
 19. Unzip and copy to ~/.fonts
 20. `fc-cache -fv` to manually rebuild the font cache
 21. `sudo usermod -a -G wireshark coderz`
+
+## CLI apps setup
+
+- Install air https://github.com/cosmtrek/air#via-go-install
+- Install bat via amd64 deb https://github.com/sharkdp/bat/releases
+- Install exa https://the.exa.website/install/linux#manual
+- Install fzf via git https://github.com/junegunn/fzf#installation, `[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh` is already set in .zshrc
+- Install golang migrate https://github.com/golang-migrate/migrate/tree/master/cmd/migrate
+- Install go global update https://github.com/Gelio/go-global-update#installation
+- Install lazydocker https://github.com/jesseduffield/lazydocker#go
+- Install lazygit https://github.com/jesseduffield/lazygit#go
+- Install rip via binary https://github.com/nivekuil/rip#-installation
+- Install scc https://github.com/boyter/scc#go-get
+- Install thefuck `pip3 install thefuck --user`, `eval $(thefuck --alias)` is already set in .zshrc
+- Install zoxide via install script https://github.com/ajeetdsouza/zoxide#installation, `eval "$(zoxide init zsh)"` is already set in .zshrc
 
 ## Postman setup
 
