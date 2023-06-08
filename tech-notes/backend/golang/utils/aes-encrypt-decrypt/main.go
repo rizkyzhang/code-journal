@@ -1,5 +1,3 @@
-// Reference
-
 package main
 
 import (
@@ -12,67 +10,94 @@ import (
 	"io"
 )
 
-func Encrypt(plaintext []byte, key []byte) ([]byte, error) {
-	c, err := aes.NewCipher(key)
+type AesEncryptUtil interface {
+	Encrypt(plaintext string) (string, error)
+	Decrypt(ciphertext string) (string, error)
+}
+
+type baseAesEncrypt struct {
+	key []byte
+}
+
+func NewAesEncrypt(_key string) AesEncryptUtil {
+	key, _ := hex.DecodeString(_key)
+
+	return &baseAesEncrypt{
+		key: key,
+	}
+}
+
+func (b *baseAesEncrypt) Encrypt(plaintext string) (string, error) {
+	c, err := aes.NewCipher(b.key)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	gcm, err := cipher.NewGCM(c)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	nonce := make([]byte, gcm.NonceSize())
 	if _, err = io.ReadFull(rand.Reader, nonce); err != nil {
-		return nil, err
+		return "", err
 	}
 
-	return gcm.Seal(nonce, nonce, plaintext, nil), nil
+	byt, err := gcm.Seal(nonce, nonce, []byte(plaintext), nil), nil
+	if err != nil {
+		return "", err
+	}
+
+	return hex.EncodeToString(byt), nil
 }
 
-func Decrypt(ciphertext []byte, key []byte) ([]byte, error) {
-	c, err := aes.NewCipher(key)
+func (b *baseAesEncrypt) Decrypt(ciphertextStr string) (string, error) {
+	ciphertextByt, err := hex.DecodeString(ciphertextStr)
 	if err != nil {
-		return nil, err
+		return "", err
+	}
+
+	c, err := aes.NewCipher(b.key)
+	if err != nil {
+		return "", err
 	}
 
 	gcm, err := cipher.NewGCM(c)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	nonceSize := gcm.NonceSize()
-	if len(ciphertext) < nonceSize {
-		return nil, errors.New("ciphertext too short")
+	if len(ciphertextByt) < nonceSize {
+		return "", errors.New("ciphertext too short")
 	}
 
-	nonce, ciphertext := ciphertext[:nonceSize], ciphertext[nonceSize:]
+	nonce, ciphertext := ciphertextByt[:nonceSize], ciphertextByt[nonceSize:]
 
-	return gcm.Open(nil, nonce, ciphertext, nil)
+	byt, err := gcm.Open(nil, nonce, ciphertext, nil)
+	if err != nil {
+		return "", err
+	}
+
+	return string(byt), nil
 }
 
 func main() {
 	// The key has to be 32 bytes long!
-	key, err := hex.DecodeString("5908b285ca7fbe782691319026c52080ef8f43912e2f8651a22554877ea0ffc1")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	text := []byte("Golang is cool!")
-	fmt.Printf("key: %v\n", key)
+	key := "5908b285ca7fbe782691319026c52080ef8f43912e2f8651a22554877ea0ffc1"
+	aes := NewAesEncrypt(key)
 
-	ciphertext, err := Encrypt(text, key)
+	ciphertext, err := aes.Encrypt("test")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Printf("%s => %x\n", text, ciphertext)
+	fmt.Println(ciphertext)
 
-	plaintext, err := Decrypt(ciphertext, key)
+	plaintext, err := aes.Decrypt(ciphertext)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Printf("%x => %s\n", ciphertext, plaintext)
+	fmt.Println(plaintext)
 }
