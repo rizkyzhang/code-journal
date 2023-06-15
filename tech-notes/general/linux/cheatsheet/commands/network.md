@@ -1,12 +1,7 @@
-## APT
-
-- List installed packages `apt list --installed pattern` = `apt list --installed 'go*'`
-
----
-
-## Network
-
 - Get IP address `hostname -I | awk '{print $1}'`
+- Download file `wget -P -O`
+  - `-P` = output path
+  - `-O` = file name
 
 ---
 
@@ -43,9 +38,9 @@ scp -r directory user@host:/path/to/directory  # Copying an entire directory
 
 ### Commands
 
-- put [local path] [remote path] = Upload file
-- get [remote path] [local path] = Download file
-- lcd = Change the local directory
-- lmkdir = Create a local directory
-- lpwd = Display local working directory
-- lls = Display the contents of the local working directory
+- `put [local path] [remote path]` = Upload file
+- `get [remote path] [local path]` = Download file
+- `lcd` = Change the local directory
+- `lmkdir` = Create a local directory
+- `lpwd` = Display local working directory
+- `lls` = Display the contents of the local working directory
