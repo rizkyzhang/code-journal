@@ -48,6 +48,13 @@
 - Install thefuck `pip3 install thefuck --user`, `eval $(thefuck --alias)` is already set in .zshrc
 - Install zoxide via install script https://github.com/ajeetdsouza/zoxide#installation, `eval "$(zoxide init zsh)"` is already set in .zshrc
 
+## Devops setup
+
+- Install virtualbox via deb https://www.virtualbox.org/wiki/Linux_Downloads
+- Install maven https://maven.apache.org/install.html
+- Install vagrant https://developer.hashicorp.com/vagrant/downloads
+- Install aws-cli https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install
+
 ## Postman setup
 
 1. Download postman tar.gz https://www.postman.com/downloads/
