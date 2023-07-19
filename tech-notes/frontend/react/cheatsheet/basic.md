@@ -1,0 +1,1 @@
+- Reset `<input type="file"/>` value so we can re-add same file, add this line into `onChange` handler `event.target.value = ''`
