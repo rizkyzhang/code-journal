@@ -1,6 +1,6 @@
 1. `termux-setup-storage`
 2. `pkg update && pkg upgrade`
-3. `pkg i neovim neofetch git zsh bat exa`
+3. `pkg i neovim rxfetch git zsh bat exa zoxide`
 4. Disable extra keys in `~/.termux/termux.properties` -> `extra-keys = []`
 5. `chsh -s zsh`
 6. Install zgenom zsh plugin manager https://github.com/jandamm/zgenom
