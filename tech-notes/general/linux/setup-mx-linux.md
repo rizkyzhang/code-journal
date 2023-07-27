@@ -23,15 +23,17 @@
 10. Autostart chrome, slack and terminal
 11. Install nvm https://github.com/nvm-sh/nvm
 12. `nvm install --lts`
-13. Download go linux-amd64 tar.gz https://go.dev/dl/
-14. `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
-15. Install docker https://docs.docker.com/engine/install/debian/
-16. `sudo usermod -aG docker $USER`
-17. `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
-18. Download firacode nerd font https://www.nerdfonts.com/font-downloads
-19. Unzip and copy to ~/.fonts
-20. `fc-cache -fv` to manually rebuild the font cache
-21. `sudo usermod -a -G wireshark coderz`
+13. `npm i -g ni pnpm yarn`
+14. Install jetbrain ide
+15. Download go linux-amd64 tar.gz https://go.dev/dl/
+16. `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
+17. Install docker https://docs.docker.com/engine/install/debian/
+18. `sudo usermod -aG docker $USER`
+19. `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+20. Download firacode nerd font https://www.nerdfonts.com/font-downloads
+21. Unzip and copy to ~/.fonts
+22. `fc-cache -fv` to manually rebuild the font cache
+23. `sudo usermod -a -G wireshark coderz`
 
 ## CLI apps setup
 
