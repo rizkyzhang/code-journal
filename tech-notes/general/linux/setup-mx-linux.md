@@ -19,7 +19,7 @@
 6. Install zgenom https://github.com/jandamm/zgenom
 7. Copy linux dotfiles to root https://github.com/rizkyzhang/dotfiles
 8. Copy .ssh to root and `chmod 600 ~/.ssh/*`
-9. Install chrome, beekeeper studio, mongodb compass, slack, telegram, vscode
+9. Install chrome, beekeeper studio, mongodb compass, slack, telegram, vscode, anki
 10. Autostart chrome, slack and terminal
 11. Install nvm https://github.com/nvm-sh/nvm
 12. `nvm install --lts`
