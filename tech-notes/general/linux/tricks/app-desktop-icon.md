@@ -1,8 +1,10 @@
 # Create a desktop icon on Ubuntu or Debian based systems
 
 Steps:
+
 1. Create a [application-name].desktop file in /usr/share/applications/
 2. Copy the following into the .desktop file and update it with the details you want.
+
 ```bash
 [Desktop Entry]
 Version=1.0
@@ -16,12 +18,14 @@ Type=Application
 Categories=category of the application
 MimeType=Type of application it should open
 ```
+
 3. Logout and login.
 
 Example:
+
 ```bash
 [Desktop Entry]
-Name=Firefox Developer 
+Name=Firefox Developer
 GenericName=Firefox Developer Edition
 Exec=/opt/firefox_dev/firefox %U
 Terminal=false
@@ -30,4 +34,18 @@ Type=Application
 Categories=Application;Network;X-Developer;
 Comment=Firefox Developer Edition Web Browser.
 StartupWMClass=Firefox Developer Edition
+```
+
+Example for root GUI:
+
+```bash
+[Desktop Entry]
+Name=XAMPP
+Comment=XAMPP
+Exec=gksu /opt/lampp/manager-linux-x64.run
+Icon=/opt/lampp/htdocs/favicon.ico
+Terminal=false
+Type=Application
+Categories=Application;Network;X-Developer;
+StartupNotify=false
 ```
