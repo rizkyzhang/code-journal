@@ -4,4 +4,4 @@
 
 ## Create container
 
-`docker container create --name dev-postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5433:5432 --mount "type=volume,source=dev-postgres,destination=/var/lib/postgresql/data" postgres`
+`docker container create --name dev-postgres -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 --mount "type=volume,source=dev-postgres,destination=/var/lib/postgresql/data" postgres`
