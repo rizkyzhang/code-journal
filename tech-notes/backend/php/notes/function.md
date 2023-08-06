@@ -1,0 +1,3 @@
+- `declare(strict_types=1)` enforce strict type checking on function arguments.
+- `use()` function can be used to access global variable from an anonymous function.
+- Arrow function can access global variable by default.

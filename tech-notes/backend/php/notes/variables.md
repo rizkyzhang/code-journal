@@ -1,0 +1,8 @@
+- Rules for PHP variables:
+  - A variable starts with the $ sign, followed by the name of the variable.
+  - A variable name must start with a letter or the underscore character.
+  - A variable name cannot start with a number.
+  - A variable name can only contain alpha-numeric characters and underscores `(A-z, 0-9, and _ )`.
+- Constant defined with `define` keyword is created at runtime, while constant defined with `const` keyword is created at compile time. This means `define` can be conditional. It is recommended to use `define` because it is already deprecated.
+- Unlike other languages, variables declared inside blocks such as loops or if (even nested), will become global variable, only way to declare local variable is inside function.
+- By default we can only access local variable inside a function, to access global variable we need use `global` or `use` keyword.

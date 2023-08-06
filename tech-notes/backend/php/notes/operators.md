@@ -1,0 +1,1 @@
+- `@` Error control operator is used to suppress error in an expression, `$my_file = @file ('non_existent_file')`. Note that in PHP 8, `@` will no longer suppress fatal errors.
