@@ -9,7 +9,7 @@ I am assuming you are running Linux and already have OpenSSH installed. For Mac,
 The first thing we need to do is to create a SSH key for each account.
 Go to your terminal and run each command.
 
-```bash
+```conf
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_fulltime -C "fulltime@mail.com"
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_portfolio -C "portfolio@mail.com"
 ssh-keygen -t rsa -f ~/.ssh/id_rsa_personal -C "personal@mail.com"
@@ -20,7 +20,7 @@ The second and third commands do the same thing respectively for portfolio accou
 
 ## Adding SSH Keys Into SSH Authentication Agent
 
-```bash
+```conf
 ssh-add ~/.ssh/id_rsa_fulltime
 ssh-add ~/.ssh/id_rsa_portfolio
 ssh-add ~/.ssh/id_rsa_personal
@@ -30,7 +30,7 @@ ssh-add ~/.ssh/id_rsa_personal
 
 Now you need to go to `~/.ssh` and create a file named `config` inside it. Open it with vim or other text editor and add the following configurations.
 
-```bash
+```conf
 Host *
 AddKeysToAgent yes
 IdentitiesOnly yes
@@ -48,21 +48,21 @@ HostName github.com
 IdentityFile ~/.ssh/id_rsa_personal
 ```
 
-`Host *` means the config will be applied to every host, not only ` github.com-prefix`.
+`Host *` means the config will be applied to every host, not only `github.com-prefix`.
 
 `AddKeysToAgent` tells SSH to remember your passphrase, so you don't need to enter it every time, only on every new login session.
 
 `IdentitiesOnly` is the gotcha I mean earlier. Let's say you are currently authenticated with fulltime account, and you want to switch to personal account. If you did not specify it, **SSH will continue to use the first authenticated SSH key even though we have already specified different SSH key for each account**, in this case it will continue to use fulltime SSH key for each account.
 
-The postfix ( eg -personal) after ` github.com` is used to identify different SSH keys, you can name it whatever you like but it should be unique, usually I named it the context in which the GitHub account is used for.
+The postfix ( eg -personal) after `github.com` is used to identify different SSH keys, you can name it whatever you like but it should be unique, usually I named it the context in which the GitHub account is used for.
 
 ## Final Setup
 
 If you already have an existing cloned repo from GitHub, you need to go the repo directory and edit `.git/config` file to append identifier postfix to the github.com hostname.
 
-For example, you already clone a repo named `personal-project` from your personal account, to connect the correct SSH key to the repo you have to append this postfix `-personal` to the ` github.com` hostname.
+For example, you already clone a repo named `personal-project` from your personal account, to connect the correct SSH key to the repo you have to append this postfix `-personal` to the `github.com` hostname.
 
-```bash
+```conf
 [remote "origin"]
 url = git@github.com-personal:personal-account/personal-project.git
 ```
@@ -70,7 +70,7 @@ url = git@github.com-personal:personal-account/personal-project.git
 If you want to clone a new repo. Simply append the identifier postfix to the `github.com` hostname of the clone url.
 `git clone git@github.com-personal:personal-account/personal-project.git`
 
-After that, you will need to set up Github username and email for the repo.
+After that, you will need to set up Github username and email for the repo by running these commands:
 
 ```bash
 git config user.name "personal-account"
@@ -95,11 +95,11 @@ if [[ `uname` == Linux ]] then
   /usr/bin/keychain $HOME/.ssh/id_rsa_personal
   /usr/bin/keychain $HOME/.ssh/id_rsa_portfolio
   /usr/bin/keychain $HOME/.ssh/id_rsa_fulltime
-source $HOME/.keychain/ $HOST-sh
+source $HOME/.keychain/$HOST-sh
 fi
 ```
 
-`/usr/bin/keychain` command will prompt for ssh passphrase for every login session and save it to `$HOME/.keychain/ $HOST-sh`, in this case because we have 3 keys, it will be prompted 3 times.
+`/usr/bin/keychain` command will prompt for ssh passphrase for every login session and save it to `$HOME/.keychain/$HOST-sh`, in this case because we have 3 keys, it will be prompted 3 times.
 
 ## Bonus: complete SSH keys automation!
 
