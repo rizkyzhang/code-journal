@@ -12,28 +12,21 @@
 ## General setup
 
 1. `sudo apt update && sudo apt upgrade`
-2. `sudo apt install openssh-server adb scrcpy ncdu zsh build-essential clang python3-pip kdenlive wireshark`
+2. `sudo apt install openssh-server adb ncdu zsh build-essential python3-pip kdenlive fonts-firacode`
 3. `chsh -s /usr/bin/zsh`
-4. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-5. Install neovim with deb https://github.com/neovim/neovim/releases/
+4. Copy linux dotfiles to root https://github.com/rizkyzhang/dotfiles
+5. Copy .ssh to root and `chmod 600 ~/.ssh/*`
 6. Install zgenom https://github.com/jandamm/zgenom
-7. Copy linux dotfiles to root https://github.com/rizkyzhang/dotfiles
-8. Copy .ssh to root and `chmod 600 ~/.ssh/*`
-9. Install chrome, beekeeper studio, mongodb compass, slack, telegram, vscode, anki
-10. Autostart chrome, slack and terminal
-11. Install nvm https://github.com/nvm-sh/nvm
-12. `nvm install --lts`
-13. `npm i -g ni pnpm yarn`
-14. Install jetbrain ide
-15. Download go linux-amd64 tar.gz https://go.dev/dl/
-16. `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
-17. Install docker https://docs.docker.com/engine/install/debian/
-18. `sudo usermod -aG docker $USER`
-19. `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
-20. Download firacode nerd font https://www.nerdfonts.com/font-downloads
-21. Unzip and copy to ~/.fonts
-22. `fc-cache -fv` to manually rebuild the font cache
-23. `sudo usermod -a -G wireshark coderz`
+7. Install neovim with deb https://github.com/neovim/neovim/releases/
+8. Install chrome, beekeeper studio, mongodb compass, slack, vscode, jetbrain ide, anki, tilix
+9. Autostart chrome, slack and tilix
+10. Install nvm https://github.com/nvm-sh/nvm -> `nvm install --lts` -> `npm i -g ni pnpm yarn`
+11. Download go linux-amd64 tar.gz https://go.dev/dl/ -> `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
+12. Install docker engine https://docs.docker.com/engine/install/debian/ -> `sudo usermod -aG docker $USER`
+13. `echo fs.inotify. max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+14. Download firacode nerd font https://www.nerdfonts.com/font-downloads -> unzip and copy to ~/.fonts -> `fc-cache -fv` to manually rebuild the font cache
+15. Enable systemd, open mx tools and add `init=lib/systemd/systemd` to the end of kernel parameters
+16. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 ## CLI apps setup
 
@@ -47,7 +40,6 @@
 - Install lazygit https://github.com/jesseduffield/lazygit#go
 - Install rip via binary https://github.com/nivekuil/rip#-installation
 - Install scc https://github.com/boyter/scc#go-get
-- Install thefuck `pip3 install thefuck --user`, `eval $(thefuck --alias)` is already set in .zshrc
 - Install zoxide via install script https://github.com/ajeetdsouza/zoxide#installation, `eval "$(zoxide init zsh)"` is already set in .zshrc
 
 ## Devops setup
@@ -83,7 +75,7 @@ EOL
 
 1. `cd .config`
 2. `mkdir redshift && cd redshift`
-3. `vim redshift.config`
+3. `vim redshift.conf`
 
 ```bash
 [redshift]
@@ -94,4 +86,4 @@ lat=<current-lat>
 lon=<current-lon>
 ```
 
-4. `redshift -c .config/redshift/redshift.conf`
+4. `redshift` or `redshift -c .config/redshift/redshift.conf` (if the first doesn't works)
