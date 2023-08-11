@@ -24,9 +24,11 @@
 11. Download go linux-amd64 tar.gz https://go.dev/dl/ -> `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
 12. Install docker engine https://docs.docker.com/engine/install/debian/ -> `sudo usermod -aG docker $USER`
 13. `echo fs.inotify. max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
-14. Download firacode nerd font https://www.nerdfonts.com/font-downloads -> unzip and copy to ~/.fonts -> `fc-cache -fv` to manually rebuild the font cache
-15. Enable systemd, open mx tools and add `init=lib/systemd/systemd` to the end of kernel parameters
-16. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+14. Install doppler cli
+15. Setup work/dev rabbitmq, postgres and mongodb containers
+16. Download firacode nerd font https://www.nerdfonts.com/font-downloads -> unzip and copy to ~/.fonts -> `fc-cache -fv` to manually rebuild the font cache
+17. Enable systemd, open mx tools and add `init=lib/systemd/systemd` to the end of kernel parameters
+18. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 ## CLI apps setup
 
