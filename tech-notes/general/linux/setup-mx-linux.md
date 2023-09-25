@@ -20,7 +20,7 @@
 7. Install neovim with deb https://github.com/neovim/neovim/releases/
 8. Install chrome, beekeeper studio, mongodb compass, slack, vscode, jetbrain ide, anki, tilix
 9. Autostart chrome, slack and tilix
-10. Install nvm https://github.com/nvm-sh/nvm -> `nvm install --lts` -> `npm i -g ni pnpm yarn`
+10. Install nvm https://github.com/nvm-sh/nvm -> `nvm install --lts` -> `npm i -g ni pnpm yarn localtunnel`
 11. Download go linux-amd64 tar.gz https://go.dev/dl/ -> `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
 12. Install docker engine https://docs.docker.com/engine/install/debian/ -> `sudo usermod -aG docker $USER`
 13. `echo fs.inotify. max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
@@ -43,6 +43,9 @@
 - Install rip via binary https://github.com/nivekuil/rip#-installation
 - Install scc https://github.com/boyter/scc#go-get
 - Install zoxide via install script https://github.com/ajeetdsouza/zoxide#installation, `eval "$(zoxide init zsh)"` is already set in .zshrc
+- Install miniconda
+  - `pip install s3cmd`
+  - `s3cmd --configure`
 
 ## Devops setup
 
