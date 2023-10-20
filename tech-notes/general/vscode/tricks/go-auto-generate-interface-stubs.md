@@ -1,3 +1,8 @@
+---
+tags:
+  - vscode-trick
+---
+
 ## Go auto generate interface stubs
 
 For instance, if you have some code like

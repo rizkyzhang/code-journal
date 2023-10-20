@@ -1,3 +1,8 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-variable
+---
 ## Problem
 
 `Variable 'X' is used before being assigned`

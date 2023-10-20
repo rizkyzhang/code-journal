@@ -1,3 +1,34 @@
+## First steps
+
+### 1. `apt update && apt upgrade`
+
+### 2. `adduser username`
+
+### 3. `adduser username sudo`
+
+### 4. Add ssh key to your vps user
+
+If you have have password-based SSH access available, run `ssh-copy-id /path/to/ssh-private-key username@ip-address` and the setup is done, otherwise follow below steps.
+
+If you do not have password-based SSH access available, you must add your public key to the remote server manually.
+
+On your local machine, output and copy the contents of your public key. `cat ~/.ssh/id_rsa.pub`.
+
+On your vps, create the `~/.ssh` directory if it does not already exist:
+
+`mkdir -p ~/.ssh`
+
+The public keys listed in `~/.ssh/authorized_keys` are the ones that you can use to log in to the server as this user, so you need to add the public key you copied into this file.
+
+`echo "ssh-rsa EXAMPLEzaC1yc2E...GvaQ== username@ip-address" >> ~/.ssh/authorized_keys`
+
+The `~/.ssh` directory and `authorized_keys` file must have specific restricted permissions (700 for `~/.ssh` and 600 for `authorized_keys`). If they don’t, you won’t be able to log in.
+
+Once the authorized_keys file contains the public key, set the permissions and ownership of the files:
+
+`chmod -R go= ~/.ssh`
+`chown -R $USER:$USER ~/.ssh`
+
 ## Secure SSH
 
 1. Setup firewall to only allow authorized IPs (you can also VPN) to connect to the SSH port
@@ -133,6 +164,7 @@ Note: If we publish a port by using option `-p 8080:80`, we should use the conta
 
 Reference:
 
+- https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-existing-droplet/
 - https://www.gaggl.com/2013/04/openvpn-forward-all-client-traffic-through-tunnel-using-ufw/
 - https://www.stavros.io/posts/block-non-cloudflare-ips-with-ufw/
 - https://github.com/chaifeng/ufw-docker

@@ -4,7 +4,7 @@ Env not loaded when using desktop shortcut
 
 ## Solution
 
-Change Exec to `/usr/bin/zsh -l -i -c "/home/username/bin/PhpStorm-231.9161.47/bin/phpstorm.sh" %u`
+Change shortcut Exec to `/usr/bin/zsh -l -i -c "/home/username/bin/PhpStorm-231.9161.47/bin/phpstorm.sh" %u`
 
 ## Reference
 

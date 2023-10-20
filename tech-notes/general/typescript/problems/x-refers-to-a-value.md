@@ -1,3 +1,7 @@
+---
+tags:
+  - typescript-problem
+---
 ## Problem
 
 `Typescript : refers to a value, but is being used as a type here (TS2749)`

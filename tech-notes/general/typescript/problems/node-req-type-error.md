@@ -1,14 +1,21 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-config
+  - typescript-problem-express-js
+---
+
 ## Problem
 
 `Property 'user' does not exist on type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'` when doing this: `req.user = user`.
 
 ## Solution steps
 
-1. Create a types folder in your src directory
+1. Create a types folder in your `src` directory
 
-2. Create a folder within the types folder with the name of the package you intend to extend. (In this case express).
+2. Create a folder inside the types folder with the name of the package you intend to extend. (In this case `express`).
 
-3. Create an index.d.ts file in that folder
+3. Create an `index.d.ts` file in that folder
 
 ```
 src/
@@ -31,7 +38,7 @@ declare global {
 }
 ```
 
-5. Update your tsconfig.json file
+5. Update your `tsconfig.json` file
 
 ```json
 {
@@ -43,7 +50,7 @@ declare global {
 
 ## Important note
 
-In the tsconfig.json's typeRoots attribute cares about ordering. Make sure you specify your local types before the node_modules types! Use `["./types", "node_modules/@types"]` over `["node_modules/@types", "./types"]`
+ `typeRoots` property cares about ordering. Make sure you specify your local types before the `node_modules` types! Use `["./types", "node_modules/@types"]` over `["node_modules/@types", "./types"]`.
 
 ## Reference
 

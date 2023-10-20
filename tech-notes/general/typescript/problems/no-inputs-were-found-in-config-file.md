@@ -1,10 +1,15 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-config
+---
 ## Problem
 
-No inputs were found in config file
+`No inputs were found in config file`
 
 ## Solution
 
-The error "No inputs were found in config file" occurs when we try to build a project that does not contain any TypeScript files. To solve the error, add an empty file with a .ts extension in your project's root directory and restart your IDE if necessary.
+The error "No inputs were found in config file" occurs when we try to build a project that does not contain any TypeScript files. To solve the error, add an empty file with a .ts extension in your project's root directory and restart your IDE if necessary. 
 
 ## Reference
 

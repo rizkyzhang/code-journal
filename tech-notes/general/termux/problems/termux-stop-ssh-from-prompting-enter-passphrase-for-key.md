@@ -1,4 +1,4 @@
-## Problem
+#### Problem
 
 I generated a key pair on my phone in termux, added the pub to the server and connected fine BUT only after being prompted with "Enter passphrase for key..." and entering the key's passphrase. In the hope of stopping the prompt from cropping up I ran...
 
@@ -29,3 +29,4 @@ Put below ssh commands on .zshrc so it will be run on termux startup
 eval $(ssh-agent)
 ssh-add
 ```
+

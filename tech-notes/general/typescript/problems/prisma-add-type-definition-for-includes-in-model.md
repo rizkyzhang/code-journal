@@ -1,3 +1,9 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-prisma
+---
+
 ## Problem
 
 Add type definitions for includes in a Prisma model

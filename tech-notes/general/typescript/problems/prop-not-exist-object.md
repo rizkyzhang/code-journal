@@ -1,3 +1,9 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-enum
+  - typescript-problem-object
+---
 ## Problem
 
 ```ts

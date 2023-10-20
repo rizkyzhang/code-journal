@@ -1,3 +1,8 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-enum
+---
 ## Problem
 
 `Type 'string' is not assignable to type "Orange" | "Apple" | "Banana"`

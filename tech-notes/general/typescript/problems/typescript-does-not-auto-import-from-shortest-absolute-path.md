@@ -1,10 +1,15 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-import
+---
 ## Problem
 
 TypeScript does not auto import from shortest absolute path
 
 ## Solution
 
-Change the paths order in tsconfig.json so it goes like this:
+Change the paths order in `tsconfig.json` so it goes like this:
 
 ```json
 "paths": {
