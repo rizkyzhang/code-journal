@@ -1,3 +1,7 @@
+---
+tags:
+  - js-util
+---
 ```js
 const blobToDataURL = (blob) => {
   const reader = new FileReader();

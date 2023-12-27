@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-trick
+---
 1. `sudo apt install resolvconf`
 2. `sudo systemctl enable resolvconf`
 3. `sudo systemctl start resolvconf`

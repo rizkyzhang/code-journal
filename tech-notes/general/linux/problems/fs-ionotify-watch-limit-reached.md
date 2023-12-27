@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
 `Error: ENOSPC: System limit for number of file watchers reached` or auto reload not working when running React server.

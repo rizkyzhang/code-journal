@@ -1,3 +1,7 @@
+---
+tags:
+  - js-trick
+---
 ## Reading in sequence
 
 If you want to read the files in sequence, you cannot use `forEach` indeed. Just use a modern `for-of` loop instead, in which await will work as expected:

@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
 Broken emoji after changing font

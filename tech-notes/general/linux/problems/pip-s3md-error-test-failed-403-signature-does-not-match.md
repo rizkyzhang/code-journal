@@ -1,3 +1,8 @@
+---
+tags:
+  - linux-problem
+  - linux-problem-package
+---
 ## Problem
 
 `ERROR: Test failed: 403 (SignatureDoesNotMatch)` when running `s3cmd --configure`

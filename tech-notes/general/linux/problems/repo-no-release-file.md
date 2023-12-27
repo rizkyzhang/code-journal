@@ -1,3 +1,8 @@
+---
+tags:
+  - linux-problem
+  - linux-problem-package
+---
 ## Problem
 
 Error: `Repository does not have a release file` in Ubuntu

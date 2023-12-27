@@ -1,3 +1,8 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-config
+---
 ## Problem
 
 Error `ReferenceError: exports is not defined in ES module scope This file is being treated as an ES module because it has a '.js' file extension and '/home/test/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.` when running `node dist/index.js` after `npm run build`.

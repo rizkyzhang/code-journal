@@ -1,3 +1,7 @@
+---
+tags:
+  - eslint-problem
+---
 ## Problem
 
 ESLint Definition for rule 'import/extensions' was not found

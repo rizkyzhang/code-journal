@@ -1,3 +1,7 @@
+---
+tags:
+  - git-problem
+---
 ## Problem
 
 Git refusing to merge unrelated histories on rebase

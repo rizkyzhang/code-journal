@@ -1,6 +1,10 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
-Permission denied when running Appimage
+Permission denied when running `Appimage`
 
 ## Solution
 

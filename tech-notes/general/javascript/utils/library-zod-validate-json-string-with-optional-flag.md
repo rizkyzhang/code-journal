@@ -1,3 +1,7 @@
+---
+tags:
+  - js-util
+---
 ```ts
 import { ZodTypeAny, z } from "zod";
 

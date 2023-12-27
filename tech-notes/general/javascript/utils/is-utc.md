@@ -1,3 +1,7 @@
+---
+tags:
+  - js-util
+---
 ```ts
 import { DateTime } from "luxon";
 

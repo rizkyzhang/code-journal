@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
 Anki black screen

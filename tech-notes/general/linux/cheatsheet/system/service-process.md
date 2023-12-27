@@ -1,0 +1,13 @@
+---
+tags:
+  - linux-cheatsheet
+---
+- Kill process `ps -ef | grep [process-name] | grep -v 'grep' | awk '{print $2}' | xargs kill -9`
+- `systemctl status [service-name]`
+- `systemctl start [service-name]`
+- `systemctl stop [service-name]`
+- `systemctl restart [service-name]`
+- `systemctl reload [service-name]`
+- `systemctl enable [service-name]`
+- `systemctl is-active [service-name]`
+- `systemctl is-enabled [service-name]`

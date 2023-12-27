@@ -1,0 +1,1 @@
+- `auth/invalid-action-code` caused by email sign in link called twice

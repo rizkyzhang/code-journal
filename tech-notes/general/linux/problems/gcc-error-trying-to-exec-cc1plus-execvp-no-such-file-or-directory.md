@@ -1,3 +1,8 @@
+---
+tags:
+  - linux-problem
+  - linux-problem-package
+---
 ## Problem
 
 `gcc: error trying to exec 'cc1plus' : execvp: No such file or directory`

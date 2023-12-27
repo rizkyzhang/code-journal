@@ -1,3 +1,8 @@
+---
+tags:
+  - linux-problem
+  - linux-problem-package
+---
 ## Problem
 
 `Package 'python-certbot-nginx' has no installation candidate`

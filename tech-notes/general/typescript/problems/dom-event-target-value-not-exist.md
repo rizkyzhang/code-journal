@@ -1,6 +1,11 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-jsx
+---
 ## Problem
 
-DOM event.target.value not exist
+DOM `event.target.value` not exist
 
 ## Solution
 

@@ -1,3 +1,7 @@
+---
+tags:
+  - jetbrain-problem
+---
 ## Problem
 
 Env not loaded when using desktop shortcut

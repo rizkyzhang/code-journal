@@ -1,3 +1,7 @@
+---
+tags:
+  - eslint-problem
+---
 ## Problem
 
 `[eslint] Delete 'CR' [prettier/prettier]`

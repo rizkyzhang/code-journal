@@ -1,6 +1,10 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
-zsh: corrupt history file
+`zsh: corrupt history file`
 
 ## Solution
 

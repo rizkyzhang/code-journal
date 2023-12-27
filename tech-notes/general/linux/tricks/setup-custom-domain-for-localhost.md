@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-trick
+---
 1. Open `/etc/hosts` file
 2. Add `127.0.0.1 your-domain.com` and save the file
 3. If you haven't install nginx, `sudo apt install nginx`
@@ -22,5 +26,4 @@ server {
 }
 ```
 
-After saving the file, run `sudo systemctl restart nginx.service  
-`.
+After saving the file, run `sudo systemctl restart nginx.service`.

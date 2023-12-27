@@ -1,3 +1,8 @@
+---
+tags:
+  - typescript-problem
+  - typescript-problem-jsx
+---
 ## Problem
 
 ```

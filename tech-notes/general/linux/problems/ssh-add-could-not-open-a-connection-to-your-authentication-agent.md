@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
 ssh-add could not open a connection to your authentication agent

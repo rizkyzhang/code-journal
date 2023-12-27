@@ -1,3 +1,7 @@
+---
+tags:
+  - eslint-problem
+---
 ## Problem
 
 `Resolve error: typescript with invalid interface loaded as resolver import react` or absolute path missing file extension

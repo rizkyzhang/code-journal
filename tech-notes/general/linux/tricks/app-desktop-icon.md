@@ -1,9 +1,13 @@
+---
+tags:
+  - linux-trick
+---
 # Create a desktop icon on Ubuntu or Debian based systems
 
 Steps:
 
-1. Create a [application-name].desktop file in /usr/share/applications/
-2. Copy the following into the .desktop file and update it with the details you want.
+1. Create a `application-name.desktop` file in `/usr/share/applications/`
+2. Copy the following into the `.desktop` file and update it with the details you want.
 
 ```bash
 [Desktop Entry]

@@ -1,3 +1,7 @@
+---
+tags:
+  - linux-problem
+---
 ## Problem
 
 Bad owner or permissions on ssh config file

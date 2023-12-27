@@ -1,0 +1,165 @@
+---
+tags:
+  - linux-setup
+---
+## Installing MX Linux
+
+1. Burn iso into usb
+2. Reboot
+3. Boot into bios (hold F2/F5/F11)
+4. Reorder the boot order so usb is in the first position
+5. Save setting and reboot
+6. After boot is completed, click install on the installer
+7. Follow the installer instruction
+8. Reboot to the installed MX Linux
+
+## General setup
+
+1. `sudo apt update && sudo apt upgrade`
+2. `sudo apt install openssh-server adb ncdu zsh build-essential python3-pip kdenlive fonts-firacode`
+3. `chsh -s /usr/bin/zsh`
+4. Copy linux dotfiles to root https://github.com/rizkyzhang/dotfiles
+5. Copy .ssh to root and `chmod 600 ~/.ssh/*`
+6. Install zgenom https://github.com/jandamm/zgenom
+7. Install neovim with deb https://github.com/neovim/neovim/releases/
+8. Install chrome, beekeeper studio, mongodb compass, slack, vscode, jetbrain ide, anki, tilix
+9. Autostart chrome, slack and tilix
+10. Install nvm https://github.com/nvm-sh/nvm -> `nvm install --lts` -> `npm i -g ni pnpm yarn localtunnel`
+11. Download go linux-amd64 tar.gz https://go.dev/dl/ -> `tar -C /usr/local -xzf go*.linux-amd64.tar.gz`
+12. Install docker engine https://docs.docker.com/engine/install/debian/ -> `sudo usermod -aG docker $USER`
+13. `echo fs.inotify. max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+14. Install doppler cli
+15. Setup work/dev rabbitmq, postgres and mongodb containers
+16. Download firacode nerd font https://www.nerdfonts.com/font-downloads -> unzip and copy to ~/.fonts -> `fc-cache -fv` to manually rebuild the font cache
+17. Enable systemd, open mx tools and add `init=lib/systemd/systemd` to the end of kernel parameters
+18. Install rust `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+## CLI apps setup
+
+- Install air https://github.com/cosmtrek/air#via-go-install
+- Install bat via amd64 deb https://github.com/sharkdp/bat/releases
+- Install exa https://the.exa.website/install/linux#manual
+- Install fzf via git https://github.com/junegunn/fzf#installation, `[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh` is already set in .zshrc
+- Install golang migrate https://github.com/golang-migrate/migrate/tree/master/cmd/migrate
+- Install go global update https://github.com/Gelio/go-global-update#installation
+- Install lazydocker https://github.com/jesseduffield/lazydocker#go
+- Install lazygit https://github.com/jesseduffield/lazygit#go
+- Install rip via binary https://github.com/nivekuil/rip#-installation
+- Install scc https://github.com/boyter/scc#go-get
+- Install zoxide via install script https://github.com/ajeetdsouza/zoxide#installation, `eval "$(zoxide init zsh)"` is already set in .zshrc
+- Install obsidian appimage
+- Install miniconda
+  - `pip install s3cmd`
+  - `s3cmd --configure`
+  - github.com/ayoisaiah/focus/cmd/focus@latest
+## Devops setup
+
+- Install virtualbox via deb https://www.virtualbox.org/wiki/Linux_Downloads
+- Install maven https://maven.apache.org/install.html
+- Install vagrant https://developer.hashicorp.com/vagrant/downloads
+- Install aws-cli https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install
+
+
+## Webcamoid setup
+
+```sh
+sudo apt-get -y install \
+    ccache \
+    clang \
+    cmake \
+    g++ \
+    git \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    libasound2-dev \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavformat-dev \
+    libavutil-dev \
+    libgl1-mesa-dev \
+    libgstreamer-plugins-base1.0-dev \
+    libgstreamer1.0-0 \
+    libjack-dev \
+    libkmod-dev \
+    libpipewire-0.3-dev \
+    libpulse-dev \
+    libswresample-dev \
+    libswscale-dev \
+    libusb-dev \
+    libuvc-dev \
+    libv4l-dev \
+    libvlc-dev \
+    libvlccore-dev \
+    linux-libc-dev \
+    make \
+    patchelf \
+    pkg-config \
+    vlc-plugin-base \
+    xvfb
+```
+
+```sh
+sudo apt-get -y install \
+        libqt5opengl5-dev \
+        libqt5svg5-dev \
+        qml-module-qt-labs-folderlistmodel \
+        qml-module-qt-labs-settings \
+        qml-module-qtqml-models2 \
+        qml-module-qtquick-controls2 \
+        qml-module-qtquick-dialogs \
+        qml-module-qtquick-extras \
+        qml-module-qtquick-privatewidgets \
+        qml-module-qtquick-templates2 \
+        qt5-qmake \
+        qtdeclarative5-dev \
+        qtquickcontrols2-5-dev \
+        qttools5-dev-tools \
+        qtwayland5
+```
+
+
+```
+## Git credential setup for obsidian
+
+1. `sudo apt install libsecret-1-0 libsecret-1-dev make gcc 
+2. `sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret`
+3. Go to the repository and run `git config credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
+
+## Postman setup
+
+1. Download postman tar.gz https://www.postman.com/downloads/
+2. `tar -xzf postman*.tar.gz`
+3. If any postman version is installed before, `sudo rm -rf /opt/Postman`
+4. `sudo mv Postman /opt/Postman`
+5. `sudo ln -s /opt/Postman/Postman /usr/bin/postman`
+6. Create desktop icon for Postman
+
+```
+cat > ~/.local/share/applications/postman.desktop <<EOL
+[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;
+EOL
+```
+
+## Redshift setup
+
+1. `cd .config`
+2. `mkdir redshift && cd redshift`
+3. `vim redshift.conf`
+
+```bash
+[redshift]
+location-provider=manual
+
+[manual]
+lat=<current-lat>
+lon=<current-lon>
+```
+
+4. `redshift` or `redshift -c .config/redshift/redshift.conf` (if the first doesn't works)
